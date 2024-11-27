@@ -1,0 +1,179 @@
+//Link: https://colab.research.google.com/drive/1IJSixAhp4u9aiJN2e-aAo6b2vb1_iA37#scrollTo=IZ-PRGQ4VOdC //
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+data1 = pd.read_csv('/content/futuristic_city_traffic.csv')
+data1
+
+import matplotlib.ticker as mtick
+traffic_city=data1.groupby("City")["Traffic Density"].mean()
+traffic_city.plot(kind="bar", color="red")
+plt.gca().yaxis.set_major_formatter(mtick.FormatStrFormatter('%.2f'))
+plt.xlabel("City")
+plt.ylabel("Traffic Density")
+plt.title("Traffic in different Cities")
+plt.show
+
+from matplotlib import pyplot as plt
+import seaborn as sns
+figsize = (12, 1.2 * len(_df_27['Economic Condition'].unique()))
+plt.figure(figsize=figsize)
+sns.violinplot(_df_27, x='index', y='Economic Condition', inner='box', palette='Dark2')
+sns.despine(top=True, right=True, bottom=True, left=True)
+
+from matplotlib import pyplot as plt
+import seaborn as sns
+figsize = (12, 1.2 * len(_df_26['Weather'].unique()))
+plt.figure(figsize=figsize)
+sns.violinplot(_df_26, x='index', y='Weather', inner='box', palette='Dark2')
+sns.despine(top=True, right=True, bottom=True, left=True)
+
+from matplotlib import pyplot as plt
+import seaborn as sns
+figsize = (12, 1.2 * len(_df_25['Vehicle Type'].unique()))
+plt.figure(figsize=figsize)
+sns.violinplot(_df_25, x='index', y='Vehicle Type', inner='box', palette='Dark2')
+sns.despine(top=True, right=True, bottom=True, left=True)
+
+from matplotlib import pyplot as plt
+import seaborn as sns
+figsize = (12, 1.2 * len(_df_24['City'].unique()))
+plt.figure(figsize=figsize)
+sns.violinplot(_df_24, x='index', y='City', inner='box', palette='Dark2')
+sns.despine(top=True, right=True, bottom=True, left=True)
+
+from matplotlib import pyplot as plt
+_df_18['Speed'].plot(kind='line', figsize=(8, 4), title='Speed')
+plt.gca().spines[['top', 'right']].set_visible(False)
+
+from matplotlib import pyplot as plt
+_df_19['Is Peak Hour'].plot(kind='line', figsize=(8, 4), title='Is Peak Hour')
+plt.gca().spines[['top', 'right']].set_visible(False)
+
+from matplotlib import pyplot as plt
+_df_17['Hour Of Day'].plot(kind='line', figsize=(8, 4), title='Hour Of Day')
+plt.gca().spines[['top', 'right']].set_visible(False)
+
+from matplotlib import pyplot as plt
+_df_16['index'].plot(kind='line', figsize=(8, 4), title='index')
+plt.gca().spines[['top', 'right']].set_visible(False)
+
+from matplotlib import pyplot as plt
+import seaborn as sns
+def _plot_series(series, series_name, series_index=0):
+  palette = list(sns.palettes.mpl_palette('Dark2'))
+  xs = series['index']
+  ys = series['Hour Of Day']
+  plt.plot(xs, ys, label=series_name, color=palette[series_index % len(palette)])
+fig, ax = plt.subplots(figsize=(10, 5.2), layout='constrained')
+df_sorted = _df_15.sort_values('index', ascending=True)
+for i, (series_name, series) in enumerate(df_sorted.groupby('Economic Condition')):
+  _plot_series(series, series_name, i)
+  fig.legend(title='Economic Condition', bbox_to_anchor=(1, 1), loc='upper left')
+sns.despine(fig=fig, ax=ax)
+plt.xlabel('index')
+_ = plt.ylabel('Hour Of Day')
+
+from matplotlib import pyplot as plt
+import seaborn as sns
+def _plot_series(series, series_name, series_index=0):
+  palette = list(sns.palettes.mpl_palette('Dark2'))
+  xs = series['index']
+  ys = series['Hour Of Day']
+  plt.plot(xs, ys, label=series_name, color=palette[series_index % len(palette)])
+fig, ax = plt.subplots(figsize=(10, 5.2), layout='constrained')
+df_sorted = _df_14.sort_values('index', ascending=True)
+for i, (series_name, series) in enumerate(df_sorted.groupby('Weather')):
+  _plot_series(series, series_name, i)
+  fig.legend(title='Weather', bbox_to_anchor=(1, 1), loc='upper left')
+sns.despine(fig=fig, ax=ax)
+plt.xlabel('index')
+_ = plt.ylabel('Hour Of Day')
+
+from matplotlib import pyplot as plt
+import seaborn as sns
+def _plot_series(series, series_name, series_index=0):
+  palette = list(sns.palettes.mpl_palette('Dark2'))
+  xs = series['index']
+  ys = series['Hour Of Day']
+
+  plt.plot(xs, ys, label=series_name, color=palette[series_index % len(palette)])
+
+fig, ax = plt.subplots(figsize=(10, 5.2), layout='constrained')
+df_sorted = _df_13.sort_values('index', ascending=True)
+for i, (series_name, series) in enumerate(df_sorted.groupby('Vehicle Type')):
+  _plot_series(series, series_name, i)
+  fig.legend(title='Vehicle Type', bbox_to_anchor=(1, 1), loc='upper left')
+sns.despine(fig=fig, ax=ax)
+plt.xlabel('index')
+_ = plt.ylabel('Hour Of Day')
+
+from matplotlib import pyplot as plt
+import seaborn as sns
+def _plot_series(series, series_name, series_index=0):
+  palette = list(sns.palettes.mpl_palette('Dark2'))
+  xs = series['index']
+  ys = series['Hour Of Day']
+
+  plt.plot(xs, ys, label=series_name, color=palette[series_index % len(palette)])
+
+fig, ax = plt.subplots(figsize=(10, 5.2), layout='constrained')
+df_sorted = _df_12.sort_values('index', ascending=True)
+for i, (series_name, series) in enumerate(df_sorted.groupby('City')):
+  _plot_series(series, series_name, i)
+  fig.legend(title='City', bbox_to_anchor=(1, 1), loc='upper left')
+sns.despine(fig=fig, ax=ax)
+plt.xlabel('index')
+_ = plt.ylabel('Hour Of Day')
+
+from matplotlib import pyplot as plt
+_df_11.plot(kind='scatter', x='Is Peak Hour', y='Random Event Occurred', s=32, alpha=.8)
+plt.gca().spines[['top', 'right',]].set_visible(False)
+
+from matplotlib import pyplot as plt
+_df_10.plot(kind='scatter', x='Speed', y='Is Peak Hour', s=32, alpha=.8)
+plt.gca().spines[['top', 'right',]].set_visible(False)
+
+from matplotlib import pyplot as plt
+_df_9.plot(kind='scatter', x='Hour Of Day', y='Speed', s=32, alpha=.8)
+plt.gca().spines[['top', 'right',]].set_visible(False)
+
+from matplotlib import pyplot as plt
+_df_8.plot(kind='scatter', x='index', y='Hour Of Day', s=32, alpha=.8)
+plt.gca().spines[['top', 'right',]].set_visible(False)
+
+from matplotlib import pyplot as plt
+import seaborn as sns
+_df_7.groupby('Economic Condition').size().plot(kind='barh', color=sns.palettes.mpl_palette('Dark2'))
+plt.gca().spines[['top', 'right',]].set_visible(False)
+
+from matplotlib import pyplot as plt
+import seaborn as sns
+_df_6.groupby('Weather').size().plot(kind='barh', color=sns.palettes.mpl_palette('Dark2'))
+plt.gca().spines[['top', 'right',]].set_visible(False)
+
+from matplotlib import pyplot as plt
+import seaborn as sns
+_df_5.groupby('Vehicle Type').size().plot(kind='barh', color=sns.palettes.mpl_palette('Dark2'))
+plt.gca().spines[['top', 'right',]].set_visible(False)
+
+from matplotlib import pyplot as plt
+import seaborn as sns
+_df_4.groupby('City').size().plot(kind='barh', color=sns.palettes.mpl_palette('Dark2'))
+plt.gca().spines[['top', 'right',]].set_visible(False)
+
+from matplotlib import pyplot as plt
+_df_3['Is Peak Hour'].plot(kind='hist', bins=20, title='Is Peak Hour')
+plt.gca().spines[['top', 'right',]].set_visible(False)
+
+from matplotlib import pyplot as plt
+_df_2['Speed'].plot(kind='hist', bins=20, title='Speed')
+plt.gca().spines[['top', 'right',]].set_visible(False)
+
+from matplotlib import pyplot as plt
+_df_1['Hour Of Day'].plot(kind='hist', bins=20, title='Hour Of Day')
+plt.gca().spines[['top', 'right',]].set_visible(False)
+
+from matplotlib import pyplot as plt
+_df_0['index'].plot(kind='hist', bins=20, title='index')
+plt.gca().spines[['top', 'right',]].set_visible(False)
